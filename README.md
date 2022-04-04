@@ -112,6 +112,9 @@
 ## Find installed packages:
     sudo apt list --installed
 
+## Create file of required size:
+    dd if=/dev/zero of=testfile.log bs=1024 count=10240  (Create file of 10MB)
+
 ## Clean Journal Logs
     journalctl --disk-usage                  (Check log size) 
     sudo journalctl --vacuum-time=2d         (Delete log older than 2 days)
