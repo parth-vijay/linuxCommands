@@ -3,6 +3,14 @@
 ## List all ubuntu services:
     service --status-all
 
+## Update Ubuntu to latest release:
+    sudo apt update 
+    sudo apt upgrade
+    sudo apt dist-upgrade
+    sudo apt autoremove
+    sudo apt install update-manager-core
+    sudo do-release-upgrade
+
 ## *systemctl* commands:
     sudo systemctl list-units
     sudo systemctl start <service-name>
@@ -119,6 +127,16 @@
     journalctl --disk-usage                  (Check log size) 
     sudo journalctl --vacuum-time=2d         (Delete log older than 2 days)
 
+## Tuned commands:
+    sudo apt install tuned
+    sudo systemctl start tuned
+    sudo systemctl enable tuned
+    tuned-adm active                         (Check the active porfile)
+    tuned-adm recommend                      (Get recommended profile for your OS)
+    tuned-adm list                           (List lists of profile)
+    tuned-adm profile <profile_name>         (Set specific profile for your OS)
+    tuned-adm off                            (Turned off the tuned service)
+
 ## Google Cloud Commands:
     https://cloud.google.com/storage/docs/gsutil_install  (Install gsutil)
 
@@ -176,7 +194,7 @@
     azcopy copy -r https://<ACCOUNT>.blob.core.windows.net/<CONTAINER>/<DIRECTORY> /local/path   (Copy file from Azure Blog to local)
 
     az aks install-cli
-    az aks get-credentials --resource-group <RESOURCE_GROUP_NAME> --name <AKS_CLUSTER_NAME>    (Connect to the AKS cluster)
+    az aks get-credentials --resource-group <RESOURCE_GROUP_NAME> --name <AKS_CLUSTER_NAME>      (Connect to the AKS cluster)
 
 ## Azure Container Registry:
     
